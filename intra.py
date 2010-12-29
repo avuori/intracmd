@@ -6,7 +6,6 @@ def error(s):
 	sys.stderr.write(s + "\n")
 	sys.exit(-1)
 
-
 HOST = "intra.fast.sh"
 
 passwd = open(".passwd", "r").read().split("\n")
@@ -17,6 +16,7 @@ try:
 except IndexError:
 	error("Invalid .passwd file.")
 
+PROJECT_ID = 236
 DAY_STARTS = "0900"
 DAY_ENDS = "1630"
 
@@ -65,8 +65,8 @@ def open_timecard(*args):
 			  "day": day,
 			  "time": DAY_STARTS,
               "anfang": "",
-              "x": "0",
-              "y": "0"}
+              "x": 0,
+              "y": 0}
 	return _post(conn, "/timecard/timecard.php", params, session_id)
 
 def close_timecard(*args):
@@ -84,15 +84,27 @@ def close_timecard(*args):
 	conn = args[1]
 	session_id = args[2]
 	params = {"mode": "data",
-			  "action": "fills",
-			  "ID": item_id,
-              "time": DAY_ENDS}
+		  "action": "fills",
+		  "ID": item_id,
+		  "time": DAY_ENDS}
 	return _post(conn, "/timecard/timecard.php", params, session_id)
 
 def attach_hours(*args):
 	conn = args[1]
 	session_id = args[2]
-	return "", conn
+	params = {"h[]": "7",
+			  "m[]": "30",
+			  "note[]": "",
+			  "timeproj_ID[]": "",
+			  "nr[]": PROJECT_ID,
+			  "action": "proj",
+			  "mode": "data",
+			  "day": day,
+			  "month": month,
+			  "year": year,
+			  "x": 0,
+			  "y": 0}
+	return _post(conn, "/timecard/timecard.php", params, session_id)
 
 def close(*args):
 	conn = args[1]
