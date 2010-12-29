@@ -1,0 +1,24 @@
+Request URL:http://intra.fast.sh/timecard/timecard.php
+Request Method:POST
+Status Code:200 OK
+
+Request Headers
+Accept:application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Charset:ISO-8859-1,utf-8;q=0.7,*;q=0.3
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:en-US,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Content-Length:40
+Content-Type:application/x-www-form-urlencoded
+Cookie:PHPROJEKT=<hash>
+Host:intra.fast.sh
+Origin:http://intra.fast.sh
+Referer:http://intra.fast.sh/timecard/timecard.php
+User-Agent:Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.552.224 Safari/534.10
+
+Form Data
+mode:data
+action:fills
+ID:3787
+time:1630
