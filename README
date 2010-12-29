@@ -1,0 +1,18 @@
+intracmd
+========
+
+A command line interface for using timecard in PHProject who-knows-how-ancient-version.
+
+With this tool, you may do your daily timecard marking with one command.
+
+Examples
+
+python intra.py				# defaults today
+python intra.py 30			# this month, 30th day
+python intra.py 30 12		# Dec 30th
+python intra.py 30 12 2010	# Full date
+
+You need to create a .passwd file containing the username and the password
+separated by a newline.
+
+Enjoy!
